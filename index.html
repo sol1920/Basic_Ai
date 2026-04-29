@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스마트 데일리 메이트 | Smart Daily Mate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-decor"></div>
+    
+    <div class="container">
+        <header>
+            <h1>✨ Smart Daily Mate</h1>
+            <p class="subtitle">오늘의 할 일과 소중한 디데이를 관리하세요</p>
+        </header>
+
+        <section class="input-section card">
+            <div class="input-group">
+                <label for="todo-text">할 일 내용</label>
+                <input type="text" id="todo-text" placeholder="무엇을 해야 하나요?">
+            </div>
+            
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="importance">중요도</label>
+                    <select id="importance">
+                        <option value="상">🔥 상 (긴급)</option>
+                        <option value="중" selected>⚡ 중 (보통)</option>
+                        <option value="하">🌱 하 (여유)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="target-date">목표 날짜</label>
+                    <input type="date" id="target-date">
+                </div>
+            </div>
+
+            <button id="add-btn" class="primary-btn">추가하기</button>
+        </section>
+
+        <section class="list-section">
+            <div class="list-header">
+                <h2>📋 할 일 목록</h2>
+                <span id="item-count">0 items</span>
+            </div>
+            <div id="todo-list" class="todo-list">
+                <!-- Items will be added here -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal for Alerts -->
+    <div id="alert-modal" class="modal">
+        <div class="modal-content card">
+            <div class="modal-icon">⚠️</div>
+            <p id="alert-message"></p>
+            <button class="modal-close-btn">확인</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
